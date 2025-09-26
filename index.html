@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+  Name: Hamza Ahmed
+  Date: 09.24.2025
+  CSC 372-01
+ 
+  This is the index.html page for my assignment 3 and now assignment 4 as well. It includes links to
+  the other files used including the CSS page, styles.css, and the Javascript file, script.js (which was added for assignment 4).
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <!-- Player Throw -->
+    <section id="player-throw">
+      <h2>Your Choice</h2>
+      <figure class="choice">
+        <img src="images/rock.png" alt="Rock" id="rock">
+        <figcaption>Rock</figcaption>
+      </figure>
+      <figure class="choice">
+        <img src="images/paper.png" alt="Paper" id="paper">
+        <figcaption>Paper</figcaption>
+      </figure>
+      <figure class="choice">
+        <img src="images/scissors.png" alt="Scissors" id="scissors">
+        <figcaption>Scissors</figcaption>
+      </figure>
+    </section>
+
+    <!-- Computer Throw -->
+    <section id="computer-throw">
+      <h2>Computer's Choice</h2>
+      <figure>
+        <img src="images/question.png" alt="Waiting" id="computer-img">
+        <figcaption id="computer-caption">?</figcaption>
+      </figure>
+    </section>
+
+    <!-- Outcome -->
+    <section id="outcome">
+      <h2>Result</h2>
+      <p id="result-text">Make your choice!</p>
+    </section>
+  </main>
+
+  
+</body>
+
+</html>
