@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 
-#player-throw, #computer-throw, #outcome {
+#player-throw, #computer-throw, #outcome, #scoreboard {
   margin-top: 20px;
 }
 
@@ -27,4 +27,16 @@ body {
   width: 100px;
   border: 3px solid gray;
   border-radius: 8px;
+}
+
+#scoreboard p {
+  font-size: 18px;
+  margin: 5px;
+}
+
+#reset-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
 }

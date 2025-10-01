@@ -1,8 +1,19 @@
-// Player and computer choices
+// DOM elements
 let choices = document.querySelectorAll("#player-throw img");
 let computerImg = document.querySelector("#computer-img");
 let computerCaption = document.querySelector("#computer-caption");
 let resultText = document.querySelector("#result-text");
+
+// Scoreboard elements
+let winsSpan = document.querySelector("#wins");
+let lossesSpan = document.querySelector("#losses");
+let tiesSpan = document.querySelector("#ties");
+let resetBtn = document.querySelector("#reset-btn");
+
+// Track scores
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
 let choiceArray = ["rock", "paper", "scissors"];
 let imagePaths = {
@@ -50,6 +61,9 @@ function startComputerTurn(playerChoice) {
     // Decide winner
     let result = decideWinner(playerChoice, finalChoice);
     resultText.textContent = result;
+
+    // Update scores
+    updateScore(result);
   }, 3000);
 }
 
@@ -68,3 +82,36 @@ function decideWinner(player, computer) {
     return "Computer wins!";
   }
 }
+
+// Update scoreboard
+function updateScore(result) {
+  if (result === "You win!") {
+    wins++;
+    winsSpan.textContent = wins;
+  } else if (result === "Computer wins!") {
+    losses++;
+    lossesSpan.textContent = losses;
+  } else {
+    ties++;
+    tiesSpan.textContent = ties;
+  }
+}
+
+// Reset button
+resetBtn.addEventListener("click", function() {
+  wins = 0;
+  losses = 0;
+  ties = 0;
+
+  winsSpan.textContent = 0;
+  lossesSpan.textContent = 0;
+  tiesSpan.textContent = 0;
+
+  resultText.textContent = "Make your choice!";
+  computerImg.src = "images/question.png";
+  computerCaption.textContent = "?";
+
+  choices.forEach(function(c) {
+    c.classList.remove("selected");
+  });
+});
