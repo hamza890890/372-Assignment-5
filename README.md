@@ -17,9 +17,6 @@ This project is a simple Rock, Paper, Scissors game built with HTML, CSS, and Ja
 
 ---
 
-
----
-
 ## How It Works
 1. **Player Turn**
    - The player clicks on an image.
