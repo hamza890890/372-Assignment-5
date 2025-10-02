@@ -25,13 +25,13 @@ let imagePaths = {
 // Add click events to player images
 choices.forEach(function(choice) {
   choice.addEventListener("click", function() {
-    // Highlight player choice
+    
     choices.forEach(function(c) {
       c.classList.remove("selected");
     });
     choice.classList.add("selected");
 
-    // Start computer shuffle
+    
     startComputerTurn(choice.id);
   });
 });
@@ -49,25 +49,25 @@ function startComputerTurn(playerChoice) {
     counter++;
   }, 500);
 
-  // Stop shuffle after 3 seconds
+  // This is meant to stop the shuffle after 3 seconds
   setTimeout(function() {
     clearInterval(shuffleId);
 
-    // Final random choice
+    
     let finalChoice = choiceArray[Math.floor(Math.random() * 3)];
     computerImg.src = imagePaths[finalChoice];
     computerCaption.textContent = finalChoice;
 
-    // Decide winner
+    // Decides the winner
     let result = decideWinner(playerChoice, finalChoice);
     resultText.textContent = result;
 
-    // Update scores
+    // Update scores accordingly
     updateScore(result);
   }, 3000);
 }
 
-// Function to decide winner
+// This is the function to decide winner
 function decideWinner(player, computer) {
   if (player === computer) {
     return "It's a tie!";
@@ -83,7 +83,7 @@ function decideWinner(player, computer) {
   }
 }
 
-// Update scoreboard
+// Update scoreboard accordingly
 function updateScore(result) {
   if (result === "You win!") {
     wins++;
